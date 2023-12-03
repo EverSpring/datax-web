@@ -38,7 +38,7 @@ public class JobTemplateController extends BaseController{
                                         @RequestParam(required = false, defaultValue = "10") int size,
                                         int jobGroup, String jobDesc, String executorHandler, int userId,Integer[] projectIds) {
 
-        return new ReturnT<>(jobTemplateService.pageList((current-1)*size, size, jobGroup, jobDesc, executorHandler, userId, projectIds));
+        return new ReturnT<>(jobTemplateService.pageList(current, size, jobGroup, jobDesc, executorHandler, userId, projectIds));
     }
 
     @PostMapping("/add")

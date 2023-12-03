@@ -44,7 +44,7 @@ public class JobInfoController extends BaseController{
                                         @RequestParam(required = false, defaultValue = "10") int size,
                                         int jobGroup, int triggerStatus, String jobDesc, String glueType, Integer[] projectIds) {
 
-        return new ReturnT<>(jobService.pageList((current-1)*size, size, jobGroup, triggerStatus, jobDesc, glueType, 0, projectIds));
+        return new ReturnT<>(jobService.pageList(current, size, jobGroup, triggerStatus, jobDesc, glueType, 0, projectIds));
     }
 
     @GetMapping("/list")
